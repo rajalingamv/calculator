@@ -1,0 +1,14 @@
+def BuildMatCalculation(area):
+    buildmaterial=['Cement Bags','sands','Bricks','Aggregates','steelbars','Flooring Tiles','Paint']
+    measurement=["50 kg bags","cubic ft","nos","cubic ft","kg","litter"]
+    Mat_Sqft=[0.4,1.2,11,1.5,4,0.07,0.032]        
+    print(f"\n-----Material Needed for Building {area} sqft House-----\n")
+    print(f"{'NO':<9}{'Material':<18}{'Quantity':<12}{'Measurement':<9}")
+    print("-"*50)
+    for NO,Mat,Qua,Mea in zip(range(1,len(buildmaterial)),buildmaterial,Mat_Sqft,measurement):
+        print(f"{NO:<9}{Mat:<18}{round((Qua*area),2):<12}{Mea:<9}")     
+
+# Get square feet
+area=int(input(("Enter building area in square feet : ")))
+#Calculate
+BuildMatCalculation(area)
